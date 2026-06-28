@@ -1,6 +1,6 @@
 # Task Tracker
 
-Full-stack task management application built with the MERN stack.
+Full-stack task management application.
 
 ## Tech Stack
 
