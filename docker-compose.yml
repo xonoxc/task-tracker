@@ -1,0 +1,29 @@
+services:
+  mongodb:
+    image: mongo:7
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo-data:/data/db
+
+  backend:
+    build: ./backend
+    ports:
+      - '3000:3000'
+    environment:
+      MONGODB_URI: mongodb://mongodb:27017/task-tracker
+      PORT: '3000'
+      NODE_ENV: development
+      LOG_LEVEL: info
+    depends_on:
+      - mongodb
+
+  frontend:
+    build: ./frontend
+    ports:
+      - '5173:5173'
+    depends_on:
+      - backend
+
+volumes:
+  mongo-data:
