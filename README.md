@@ -123,6 +123,8 @@ bun test:coverage # with coverage report
 
 ## Deployment
 
+The backend is deployed on Render's free tier. Render free services spin down after 15 minutes of inactivity — the first request after idle time may take **20-40 seconds** to spin back up. This is expected behavior on the free tier.
+
 The project is containerized. Each service has its own Dockerfile for independent deployment:
 
 - **Backend:** Deploy to Fly.io, Railway, Koyeb, or any container platform
